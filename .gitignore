@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Conda
+*.conda
+conda-meta/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Build
+/dist/
+/build/

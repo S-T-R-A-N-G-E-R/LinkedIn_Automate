@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "GetEmployed",
+    "version": "0.1.0",
+    "description": "AI-powered LinkedIn job application agent using local Ollama.",
+    "permissions": [
+        "storage",
+        "tabs",
+        "scripting"
+    ],
+    "host_permissions": [
+        "*://*.linkedin.com/*",
+        "http://localhost:11434/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "GetEmployed",
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.linkedin.com/jobs/*"
+            ],
+            "js": [
+                "content/scraper.js",
+                "content/apply.js"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": [
+                "*://www.linkedin.com/in/*"
+            ],
+            "js": [
+                "content/profile.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}

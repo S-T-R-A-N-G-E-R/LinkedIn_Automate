@@ -1,0 +1,1491 @@
+I want to build a chrome extesnion:
+
+Workflow:
+1. We open Linkedin and activate this extesnion
+2. It automatically goes to the jobs section 
+
+<button class="_1b6ec212 da216433 c52ca965 _8157e89c _905ed6ea _118fa997 _3b272d15 _2d090b65 c469c72e e766e6a3 _3f98b0f6 d4af7205 edf279b0 _44c05634 _1dfe1ca5 _99c2b917 _04342cc2 _11461ce0" data-view-name="navigation-jobs" aria-label="Jobs, 0 new notifications"><span class="d2eb6bca _1dfe1ca5"><svg xmlns="http://www.w3.org/2000/svg" id="job-medium" fill="currentColor" data-supported-dps="24x24" viewBox="0 0 24 24" data-token-id="183" width="24" height="24" class="ba140f67 _7009b0ce _9dd4a0be _1428c98d" role="img" aria-label="" aria-hidden="true" style="width: 24px; min-width: 24px; height: 24px; min-height: 24px;"><path d="M17 6V5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1H2v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6zM9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9zm10 9a4 4 0 0 0 3-1.38V17a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-4.38A4 4 0 0 0 5 14z"></path></svg></span><span class="_118fa997 _3b272d15"><span class="_1ca01493 a9e32379 b7c8564e d867e2ae cc05a84e _676e0e0c _46515c3e efe78101 _56cbe008 _1f0d0eed _118fa997 c469c72e a9a65f4c">Jobs</span></span></button>
+
+3. I have attached the screenshot of the page it opens after clicking jobs. 
+4. There are multiple sections. We start with the first section "Jobs based on your activity"
+5. Below there is this button "Show all" 
+<a class="_27677d38 _966b1369 _8157e89c _905ed6ea efe78101 e766e6a3 _04342cc2 a39cbe0b _4c4bd444 baeafea2 _18befbfb c52ca965 _1dfe1ca5 c703e897 _092088cd" aria-disabled="false" href="https://www.linkedin.com/jobs/collections/recommended/?discover=recommended&amp;discoveryOrigin=JOBS_HOME_JYMBII" componentkey="e558b31e-8c96-456c-b068-4845602b921d" aria-label="Show all jobs based on your activity" data-view-name="jobs-home-action-top-jymbii-see-more-jobs"><span class="f471c329 _6c1cbca3 fb0dcea5 c52ca965 _8157e89c _905ed6ea _18befbfb _5dac7824 c469c72e e766e6a3 _04342cc2 _56cbe008 _1f0d0eed _58f5707e _59e7896b _5213c912 _60ded6cf c45dc9ce _21b68c1a a5eb072a c81d0a00 _491522f9"><svg xmlns="http://www.w3.org/2000/svg" id="arrow-right-small" fill="currentColor" aria-hidden="true" data-rtl="true" data-supported-dps="16x16" viewBox="0 0 16 16" data-token-id="104" width="16" height="16" class="ba140f67 _7009b0ce a8b8498d c12a3cbb a9a65f4c _91e66fcf" role="img" aria-label=""><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"></path></svg><span class="_8af6450d d6a76d7a a9791d2f fbc43688 _6d7e429b c81a9925 c229a326 _26b7f7b6 _1b5341ba ad508b6a _1fc6acfd d8e44612 efe78101 _784eab0a efc87d5c">Show all</span></span></a>
+
+6. It takes to a pages with all the job listings
+7. This page has 2 vertical sections. The left side contains the list of jobs and right side shows the description of the job selected in the left side.
+8. I want to click on each of the jobs in the left side. corresponding to that I want to go to the right side where the description is visible.
+9. I have ollama installed in my system in the extesnion I will select a model that is installed
+10. In the right side, there will be a job description box
+example:
+<div class="jobs-box__html-content
+              PrLxHHLMtGdJgEyeQHiuTNYCPqZKYfLpWY
+              t-14 t-normal
+              jobs-description-content__text--stretch" id="job-details" tabindex="-1">
+            <h2 class="text-heading-large">
+              About the job
+            </h2>
+
+<!---->            <div class="mt4">
+                <p dir="ltr">
+                  <span><p><span><strong><!---->Senior AI Engineer – LLM &amp; SLM | Production AI for Regulated Enterprises<!----></strong></span></p></span><span><p><span><strong><!---->Bengaluru(Onsite)<!----></strong></span></p></span><span><p><span><br></span></p></span><span><p><span><strong><!---->What you’ll do<!----></strong></span></p></span><span>      <ul><li><!---->Fine-tune LLMs and build<span class="white-space-pre"> </span><span><strong><!---->high-accuracy SLMs<!----></strong></span></li><li><!---->Design<span class="white-space-pre"> </span><span><strong><!---->instruction tuning &amp; alignment pipelines<!----></strong></span></li><li><!---->Build<span class="white-space-pre"> </span><span><strong><!---->RAG + agentic AI workflows<!----></strong></span></li><li><!---->Control hallucinations with<span class="white-space-pre"> </span><span><strong><!---->robust evaluation frameworks<!----></strong></span></li><li><!---->Deploy models in<span class="white-space-pre"> </span><span><strong><!---->secure, private environments<!----></strong></span></li></ul>
+</span><span><p><span><br></span></p></span><span><p><span><strong><!---->What we’re looking for<!----></strong></span></p></span><span>      <ul><li><!---->4–6 yrs ML/NLP experience, 3+ yrs LLM-focused<!----></li><li><!---->Hands-on LLaMA/Mistral/Falcon fine-tuning<!----></li><li><!---->Strong PyTorch + production Python<!----></li><li><!---->Experience with LoRA/QLoRA/distillation<!----></li><li><!---->Comfortable with GPUs, Docker, Kubernetes<!----></li></ul>
+</span><span><p><span><br></span></p></span><span><p><span><strong><!---->Why Us?<!----></strong></span></p></span><span>      <ul><li><!---->Build<span class="white-space-pre"> </span><span><strong><!---->domain-trained language models<!----></strong></span><!---->, not generic chatbots<!----></li><li><!---->Work on<span class="white-space-pre"> </span><span><strong><!---->real production AI<!----></strong></span><span class="white-space-pre"> </span>in healthcare &amp; insurance<!----></li><li><!---->Own models end-to-end:<span class="white-space-pre"> </span><span><strong><!---->train → evaluate → deploy<!----></strong></span></li><li><!---->High-impact role reporting directly to<span class="white-space-pre"> </span><span><strong><!---->CTO<!----></strong></span></li></ul>
+</span>
+                </p>
+<!---->            </div>
+          </div>
+
+11. I will copy the text from that put into ollama and ask for some simple details extraction like experience wanted, and job description.
+12. If the experience required is less than a certain threshold (indicating my eligibility), we will go to apply pipeline.
+13. Before that, we will find the section "Meet the hiring team" which contains the recruiter linkedin id. This it the most important section. I want to open the their profile
+Example:
+<div class="job-details-people-who-can-help__section--two-pane artdeco-card ph5 pv4">
+<!---->      <h2 class="text-heading-medium
+          mb2">
+        Meet the hiring team
+      </h2>
+      <div>
+        
+
+    <div class="display-flex align-items-center mt4">
+      <a class="cMQCmaFyuzFVJzdbsbjnSIkeDgRM " aria-label="View Arya Priyadarshini’s verified profile graphic" href="https://www.linkedin.com/in/arya-priyadarshini-97049b386" data-test-app-aware-link="">
+        
+    <div class="ivm-image-view-model   ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4D03AQFTmOEFUpOj_A/profile-displayphoto-scale_100_100/B4DZmVqj4GG8Ac-/0/1759152587074?e=1773878400&amp;v=beta&amp;t=pHuIU0JUXb36hBzKHVpxRzwqauLIvl3GiaKsKh4xJ9o" loading="lazy" height="48" alt="Arya Priyadarshini" id="ember512" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+      </a>
+
+      <div class="hirer-card__hirer-information">
+        <a class="cMQCmaFyuzFVJzdbsbjnSIkeDgRM " aria-label="View Arya Priyadarshini’s verified profile" href="https://www.linkedin.com/in/arya-priyadarshini-97049b386" data-test-app-aware-link="">
+          <span class="t-black jobs-poster__name text-body-medium-bold" dir="ltr">
+            <strong><!---->Arya Priyadarshini<!----></strong><span class="white-space-pre"> </span><!----><!----><span class="tvm__text tvm__text--low-emphasis"><svg role="none" aria-hidden="true" class="text-view-model__verified-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="verified-small">
+<!---->    
+    <use href="#verified-small" width="16" height="16"></use>
+</svg>
+</span>
+          </span>
+        </a>
+          <div class="hirer-card__connection-degree-container t-14 t-normal t-black--light">
+            <div class="display-flex flex-row-reverse align-items-baseline">
+              <span class="hirer-card__connection-degree" dir="ltr">
+                <!---->3rd<!---->
+              </span>
+            </div>
+          </div>
+
+        <div class="linked-area flex-1">
+          <div class="text-body-small t-black" dir="ltr">
+            <!---->Talent Acquisition Specialist at Recro<!---->
+          </div>
+            <div class="t-12 hirer-card__job-poster" dir="ltr">
+              <!---->Job poster<!---->
+            </div>
+<!---->        </div>
+      </div>
+
+      
+
+    <div class="entry-point">
+      
+    <div></div>
+  
+
+          
+        <button id="ember548" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="send-privately-small" data-rtl="true">
+<!---->    
+    <use href="#send-privately-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Message
+</span></button>
+      
+    </div>
+  
+    </div>
+  
+
+<!---->      </div>
+    </div>
+
+And
+
+<a class="cMQCmaFyuzFVJzdbsbjnSIkeDgRM " aria-label="View Arya Priyadarshini’s verified profile" href="https://www.linkedin.com/in/arya-priyadarshini-97049b386" data-test-app-aware-link="">
+          <span class="t-black jobs-poster__name text-body-medium-bold" dir="ltr">
+            <strong><!---->Arya Priyadarshini<!----></strong><span class="white-space-pre"> </span><!----><!----><span class="tvm__text tvm__text--low-emphasis"><svg role="none" aria-hidden="true" class="text-view-model__verified-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="verified-small">
+<!---->    
+    <use href="#verified-small" width="16" height="16"></use>
+</svg>
+</span>
+          </span>
+        </a>
+
+14. After going into their profile, in some cases, directly connect button is nit visible. It shows just the follow and message button. To get the connect button I want to click on this button first:
+<button class="_27677d38 _966b1369 _8157e89c _905ed6ea efe78101 e766e6a3 _04342cc2 a39cbe0b _4c4bd444 baeafea2 _18befbfb c52ca965 _1dfe1ca5" type="button" componentkey="f2baecc5-e86d-4d92-a803-f752f696bad2" aria-label="More" aria-expanded="false"><span class="f471c329 _6c1cbca3 fb0dcea5 c52ca965 _8157e89c _905ed6ea _18befbfb _5dac7824 c469c72e e766e6a3 _04342cc2 _56cbe008 _1f0d0eed fc08e3bd _59e7896b _9a0f7474 _21b68c1a a5eb072a c81d0a00 fba45fbb c4086f88"><svg xmlns="http://www.w3.org/2000/svg" id="overflow-web-ios-small" fill="currentColor" data-supported-dps="16x16" viewBox="0 0 16 16" data-token-id="342" width="16" height="16" class="ba140f67 _7009b0ce a8b8498d c12a3cbb a9a65f4c _91e66fcf" role="img" aria-label="" aria-hidden="true"><path d="M3 9.5A1.5 1.5 0 1 1 4.5 8 1.5 1.5 0 0 1 3 9.5M11.5 8A1.5 1.5 0 1 0 13 6.5 1.5 1.5 0 0 0 11.5 8m-5 0A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 8"></path></svg></span></button>
+
+
+Then click on the connect button:
+<div class="e4564161 dfa6caee _680046b5 _26267429" componentkey="9be02dec-67a0-4972-920d-72900923ce55"><div class="b5353a81" data-view-name="edge-creation-connect-action" data-view-tracking-scope="[{&quot;contentTrackingId&quot;:&quot;TpVATP0MTRuyqSKiidCN2A==&quot;,&quot;topicName&quot;:&quot;ProfileActionBreadcrumb&quot;,&quot;breadcrumb&quot;:{&quot;$type&quot;:&quot;proto.sdui.tracking.TrackingBreadcrumb&quot;,&quot;breadcrumbType&quot;:&quot;PROFILE_ACTION&quot;,&quot;content&quot;:{&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[123,34,116,114,97,99,107,105,110,103,73,100,34,58,34,78,194,149,64,76,195,189,92,102,77,92,117,48,48,49,66,194,178,194,169,92,34,194,162,194,137,195,144,194,141,195,152,34,125]}},&quot;transporterKeys&quot;:[&quot;default&quot;]}]" data-display-contents="true"><a role="menuitem" tabindex="-1" class="c703e897 _15b9f263 e7e596d0 _3dd90754 _88a805ce b714825c ba61b1e2 _8265e0aa _8157e89c efe78101 _9efa530a _118fa997" href="https://www.linkedin.com/preload/custom-invite/?vanityName=arya-priyadarshini-97049b386" componentkey="7ecb79d8-67be-4537-98d7-741d013e4552" data-tabindex="0"><div class="fb0dcea5 _6a56c64c _23911a2c _0d81368f _69bcf4e7 _118fa997 _2aed755f _1f3c8209 c52ca965 _01272bb7 _33dcc58f _26267429" componentkey="7ecb79d8-67be-4537-98d7-741d013e4552" aria-label="Invite Arya Priyadarshini to connect"><svg xmlns="http://www.w3.org/2000/svg" id="connect-small" fill="currentColor" aria-hidden="true" data-supported-dps="16x16" viewBox="0 0 16 16" data-token-id="414" width="16" height="16" class="ba140f67 _60a5654c _7009b0ce _7d1ca5c0 _8e3e5ae4 _0f155d76 _092088cd" role="img" aria-label=""><path d="M9 4a3 3 0 1 1-3-3 3 3 0 0 1 3 3M6.75 8h-1.5A2.25 2.25 0 0 0 3 10.25V15h6v-4.75A2.25 2.25 0 0 0 6.75 8M13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path></svg><div class="_23a2cc5c fb0dcea5 _118fa997 _3b272d15 _1f3c8209 a9262e33 _01272bb7 _33dcc58f"><p class="_8af6450d _26b7f7b6 a02a0828 _924e6326 d8e44612 e766e6a3 _68023ca4 _69aa14cf _784eab0a">Connect</p></div></div></a></div></div>
+
+15. In most cases after cilicking connect button, it gives option to send connection request with a note.
+<div data-test-modal="" role="dialog" tabindex="-1" class="artdeco-modal artdeco-modal--layer-default send-invite" size="medium" aria-labelledby="send-invite-modal">
+        <span class="a11y-text">Dialog content start.</span>
+            <button aria-label="Dismiss" id="ember712" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view artdeco-modal__dismiss" data-test-modal-close-btn="">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="close-medium">
+<!---->    
+    <use href="#close-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+        
+
+          <div id="ember713" class="artdeco-modal__header ember-view">
+            <h2 id="send-invite-modal">
+              Add a note to your invitation?
+            </h2>
+          
+<!----></div>
+<!---->          <div id="ember714" class="artdeco-modal__content ember-view">
+<!----><!----><!---->
+
+                <p class="display-flex">
+                    <span class="flex-1">
+                      Personalize your invitation to <strong>Arya Priyadarshini</strong> by adding a note. LinkedIn members are more likely to accept invitations that include a note.
+                    </span>
+                </p>
+<!---->
+<!---->
+          </div>
+          <div id="ember715" class="artdeco-modal__actionbar ember-view text-align-right">
+<!---->              <button aria-label="Add a note" id="ember716" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view mr1"><!---->
+<span class="artdeco-button__text">
+    Add a note
+</span></button>
+            <button aria-label="Send without a note" id="ember717" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1"><!---->
+<span class="artdeco-button__text">
+    Send without a note
+</span></button>
+          </div>
+              
+        <span class="a11y-text">Dialog content end.</span>
+      </div>
+ In the extension UI give a toggle of Do you have linkedin premium, if yes, 
+click the 
+<button aria-label="Add a note" id="ember716" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view mr1"><!---->
+<span class="artdeco-button__text">
+    Add a note
+</span></button>
+
+Then use ollama and the same job description text and the name of the recruiter to create a short message under 200 characters and send.
+Recruiter name and description:
+<div class="_23a2cc5c _118fa997 _3b272d15 _1f3c8209 a9262e33 _01272bb7 _5dac7824 dfa6caee ea3cb7e6 c5c0aa06"><div class="_118fa997 _2aed755f _1f3c8209 c52ca965 _025b7248 _5dac7824"><div aria-expanded="false" aria-haspopup="dialog" style=""><div role="button" tabindex="0" class="dfa6caee d37be413 e7e596d0 _3dd90754 _88a805ce b714825c ba61b1e2 _8265e0aa _8157e89c efe78101 _9efa530a _118fa997"><div class="fb0dcea5 e4564161"><div class="b5353a81" data-view-name="profile-top-card-verified-badge" data-display-contents="true"><div role="button" tabindex="0" class="ea3cb7e6 c5c0aa06 e7e596d0 _3dd90754 _88a805ce b714825c ba61b1e2 _8265e0aa _8157e89c efe78101 _9efa530a _118fa997" componentkey="a8e1a52b-31e2-4973-b87c-1c59cf63ca4c"><div class="fb0dcea5 _118fa997 _2aed755f _1f3c8209 a9262e33 _01272bb7 _33dcc58f" componentkey="a8e1a52b-31e2-4973-b87c-1c59cf63ca4c"><h2 class="_8af6450d _0318badd fb0dcea5 a02a0828 _924e6326 d8e44612 e766e6a3 _68023ca4 _0bdf4b7c _784eab0a">Arya Priyadarshini</h2><svg xmlns="http://www.w3.org/2000/svg" id="verified-medium" fill="currentColor" aria-hidden="false" data-supported-dps="24x24" viewBox="0 0 24 24" data-token-id="133" width="24" height="24" class="ba140f67 bfddee31 _7009b0ce _7d1ca5c0 _6c6235c5" role="img" aria-label="View Arya’s verifications" componentkey="d6fb2f52-3e12-4b48-a8ed-905f2cc57041" style="width: 24px; min-width: 24px; height: 24px; min-height: 24px;"><path d="m11.99 22-1.23-.44C6.11 19.81 2.99 16 2.99 11V5L12 2l9 3v6c0 5-3.11 8.81-7.74 10.56zM5 6.44V11c0 4.11 2.6 7.35 6.46 8.8l.54.2.58-.2C16.41 18.35 19 15.1 19 11V6.44l-7-2.32zM17 8h-2.57l-4.02 5.01-2.18-2.18-1.41 1.41 3.75 3.75 6.43-8z"></path></svg></div></div></div></div></div></div><p class="_8af6450d _26b7f7b6 a02a0828 _924e6326 e7df08c4 e766e6a3 _68023ca4 _6c6235c5 _95e774e8 _784eab0a">She/Her</p><p class="_8af6450d _26b7f7b6 a02a0828 _924e6326 e7df08c4 e766e6a3 _68023ca4 _6c6235c5 _0bdf4b7c _784eab0a">· 3rd</p></div><p class="_8af6450d b73039a2 a02a0828 _924e6326 e7df08c4 e766e6a3 _68023ca4 _0bdf4b7c _784eab0a">Talent Acquisition Specialist at Recro</p><p class="_8af6450d _26b7f7b6 a02a0828 _924e6326 e7df08c4 e766e6a3 _68023ca4 b40f7340 _0bdf4b7c _784eab0a">Recro</p><div class="_118fa997 _2aed755f _1f3c8209 a9262e33 _01272bb7 _33dcc58f"><p class="_8af6450d _26b7f7b6 a02a0828 _924e6326 e7df08c4 e766e6a3 _68023ca4 _95e774e8 _784eab0a">Bhubaneswar, Odisha, India</p><p class="_8af6450d _26b7f7b6 _5313f610 a02a0828 _924e6326 d8e44612 e766e6a3 _99c2b917 _95e774e8 _784eab0a">·</p><p class="_8af6450d _26b7f7b6 bfddee31 a02a0828 _924e6326 d8e44612 e766e6a3 _68023ca4 _7e556ec3 _784eab0a"><a class="_7e556ec3 _9ba1c5c0 d23255d3 d68959ae fd1003e5 a50629ec _172cfafd" href="#">Contact info</a></p></div></div>
+
+If Linkedin premium is toggled off:
+Click send without a note:
+<button aria-label="Send without a note" id="ember739" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1"><!---->
+<span class="artdeco-button__text">
+    Send without a note
+</span></button>
+
+16. Then go back to the previous job listing page.
+
+17. The apply pipeline:
+If ollama returns an experience in an eligible range: check the job listing page for apply type. if it gives the option of "apply" and not "Easy Apply", it means it needs to be applied manually in the recruiter's website. In that case just use the save button to save it for later.
+The "Apply" button:
+<button role="link" aria-label="Apply to Machine Learning Engineer on company website" id="jobs-apply-button-id" class="jobs-apply-button
+         artdeco-button artdeco-button--icon-right artdeco-button--3 artdeco-button--primary ember-view" data-live-test-job-apply-button="">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Apply
+</span></button>
+
+The "Save" button:
+<button class="jobs-save-button
+         artdeco-button artdeco-button--secondary artdeco-button--3" type="button" data-artdeco-is-focused="true">
+        <span aria-hidden="true" class="jobs-save-button__text">
+          Save
+        </span>
+        <span class="a11y-text">
+          Save Machine Learning Engineer at Linde@India
+        </span>
+    </button>
+
+18. If "Easy Apply" button is showing
+There are multiple dialogue box that shows, mostly it autofills, but might need some inputs to move forward.
+for example the first page is generally contact info which is auto filled by linkedin, so we don' need to do much
+<form>
+        <div class="ph5">
+            
+    <div class="bwVkIEuDMPLKKkRhnCFlBhavUakdRBmnSIXNI">
+        <h3 class="t-16 t-bold">
+          Contact info
+        </h3>
+<!---->        <div id="ember1271" class="mt3 flex-wrap artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
+          <div id="ember1272" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+            <img width="56" title="Swapnil Roy" src="https://media.licdn.com/dms/image/v2/D5603AQEUgrQCsdLuIA/profile-displayphoto-shrink_100_100/B56ZXjJyl0GcAU-/0/1743272750431?e=1773878400&amp;v=beta&amp;t=r83LLNgwsPt8dv141RKHsLV8iKar06cF61g7raX5KUU" loading="lazy" height="56" alt="Swapnil Roy" id="ember1273" class="evi-image lazy-image ember-view">
+          
+</div>
+          <div id="ember1274" class="artdeco-entity-lockup__content ember-view">
+            <div id="ember1275" class="artdeco-entity-lockup__title ember-view">
+              Swapnil Roy
+            
+</div>
+            <div id="ember1276" class="artdeco-entity-lockup__subtitle ember-view">
+              AI/Ml Intern at CNH Care | M.Sc. Data Science Student | IEEE Chapter Vice Chair | Python, Machine Learning, Data Analysis, Visualization | Kaggle &amp; GitHub Contributor | Aspiring Data Scientist Solving Real-World Problems
+            </div>
+            <div id="ember1277" class="artdeco-entity-lockup__metadata ember-view">
+              Bengaluru, Karnataka, India
+            </div>
+          </div>
+        
+</div>
+<!----><!----><!----><!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt1" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-text-entity-list-form-component="">
+    <label for="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110556-multipleChoice" class="fb-dash-form-element__label
+        fb-dash-form-element__label-title--is-required" data-test-text-entity-list-form-title="">
+      <span aria-hidden="true"><!---->Email address<!----></span><span class="visually-hidden"><!---->Email address<!----></span>
+    </label>
+
+    <span class="visually-hidden" data-test-text-entity-list-form-required="">
+      Required
+    </span>
+
+  <select id="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110556-multipleChoice" class="fb-dash-form-element__select-dropdown
+      " aria-describedby="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110556-multipleChoice-error" aria-required="true" required="" data-test-text-entity-list-form-select="">
+      <option value="Select an option">
+        Select an option
+      </option>
+      <option value="swapnilroydata@gmail.com">
+        swapnilroydata@gmail.com
+      </option>
+      <option value="swapnilroy001@gmail.com">
+        swapnilroy001@gmail.com
+      </option>
+      <option value="swapnilroydata@outlook.com">
+        swapnilroydata@outlook.com
+      </option>
+  </select>
+
+<!----></div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-text-entity-list-form-component="">
+    <label for="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-country" class="fb-dash-form-element__label
+        fb-dash-form-element__label-title--is-required" data-test-text-entity-list-form-title="">
+      <span aria-hidden="true"><!---->Phone country code<!----></span><span class="visually-hidden"><!---->Phone country code<!----></span>
+    </label>
+
+    <span class="visually-hidden" data-test-text-entity-list-form-required="">
+      Required
+    </span>
+
+  <select id="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-country" class="fb-dash-form-element__select-dropdown
+      " aria-describedby="text-entity-list-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-country-error" aria-required="true" required="" data-test-text-entity-list-form-select="">
+      <option value="Select an option">
+        Select an option
+      </option>
+      <option value="India (+91)">
+        India (+91)
+      </option>
+      <option value="Afghanistan (+93)">
+        Afghanistan (+93)
+      </option>
+      <option value="Albania (+355)">
+        Albania (+355)
+      </option>
+      <option value="Algeria (+213)">
+        Algeria (+213)
+      </option>
+      <option value="American Samoa (+1)">
+        American Samoa (+1)
+      </option>
+      <option value="Andorra (+376)">
+        Andorra (+376)
+      </option>
+      <option value="Angola (+244)">
+        Angola (+244)
+      </option>
+      <option value="Anguilla (+1)">
+        Anguilla (+1)
+      </option>
+      <option value="Antarctica (+0)">
+        Antarctica (+0)
+      </option>
+      <option value="Antigua &amp; Barbuda (+1)">
+        Antigua &amp; Barbuda (+1)
+      </option>
+      <option value="Argentina (+54)">
+        Argentina (+54)
+      </option>
+      <option value="Armenia (+374)">
+        Armenia (+374)
+      </option>
+      <option value="Aruba (+297)">
+        Aruba (+297)
+      </option>
+      <option value="Australia (+61)">
+        Australia (+61)
+      </option>
+      <option value="Austria (+43)">
+        Austria (+43)
+      </option>
+      <option value="Azerbaijan (+994)">
+        Azerbaijan (+994)
+      </option>
+      <option value="Bahamas (+1)">
+        Bahamas (+1)
+      </option>
+      <option value="Bahrain (+973)">
+        Bahrain (+973)
+      </option>
+      <option value="Bangladesh (+880)">
+        Bangladesh (+880)
+      </option>
+      <option value="Barbados (+1)">
+        Barbados (+1)
+      </option>
+      <option value="Belarus (+375)">
+        Belarus (+375)
+      </option>
+      <option value="Belgium (+32)">
+        Belgium (+32)
+      </option>
+      <option value="Belize (+501)">
+        Belize (+501)
+      </option>
+      <option value="Benin (+229)">
+        Benin (+229)
+      </option>
+      <option value="Bermuda (+1)">
+        Bermuda (+1)
+      </option>
+      <option value="Bhutan (+975)">
+        Bhutan (+975)
+      </option>
+      <option value="Bolivia (+591)">
+        Bolivia (+591)
+      </option>
+      <option value="Bosnia &amp; Herzegovina (+387)">
+        Bosnia &amp; Herzegovina (+387)
+      </option>
+      <option value="Botswana (+267)">
+        Botswana (+267)
+      </option>
+      <option value="Bouvet Island (+0)">
+        Bouvet Island (+0)
+      </option>
+      <option value="Brazil (+55)">
+        Brazil (+55)
+      </option>
+      <option value="British Indian Ocean Territory (+246)">
+        British Indian Ocean Territory (+246)
+      </option>
+      <option value="British Virgin Islands (+1)">
+        British Virgin Islands (+1)
+      </option>
+      <option value="Brunei (+673)">
+        Brunei (+673)
+      </option>
+      <option value="Bulgaria (+359)">
+        Bulgaria (+359)
+      </option>
+      <option value="Burkina Faso (+226)">
+        Burkina Faso (+226)
+      </option>
+      <option value="Burundi (+257)">
+        Burundi (+257)
+      </option>
+      <option value="Cambodia (+855)">
+        Cambodia (+855)
+      </option>
+      <option value="Cameroon (+237)">
+        Cameroon (+237)
+      </option>
+      <option value="Canada (+1)">
+        Canada (+1)
+      </option>
+      <option value="Cape Verde (+238)">
+        Cape Verde (+238)
+      </option>
+      <option value="Caribbean Netherlands (+599)">
+        Caribbean Netherlands (+599)
+      </option>
+      <option value="Cayman Islands (+1)">
+        Cayman Islands (+1)
+      </option>
+      <option value="Central African Republic (+236)">
+        Central African Republic (+236)
+      </option>
+      <option value="Chad (+235)">
+        Chad (+235)
+      </option>
+      <option value="Chile (+56)">
+        Chile (+56)
+      </option>
+      <option value="China (+86)">
+        China (+86)
+      </option>
+      <option value="Christmas Island (+61)">
+        Christmas Island (+61)
+      </option>
+      <option value="Cocos (Keeling) Islands (+61)">
+        Cocos (Keeling) Islands (+61)
+      </option>
+      <option value="Colombia (+57)">
+        Colombia (+57)
+      </option>
+      <option value="Comoros (+269)">
+        Comoros (+269)
+      </option>
+      <option value="Congo - Brazzaville (+242)">
+        Congo - Brazzaville (+242)
+      </option>
+      <option value="Congo - Kinshasa (+243)">
+        Congo - Kinshasa (+243)
+      </option>
+      <option value="Cook Islands (+682)">
+        Cook Islands (+682)
+      </option>
+      <option value="Costa Rica (+506)">
+        Costa Rica (+506)
+      </option>
+      <option value="Croatia (+385)">
+        Croatia (+385)
+      </option>
+      <option value="Cuba (+53)">
+        Cuba (+53)
+      </option>
+      <option value="Curaçao (+599)">
+        Curaçao (+599)
+      </option>
+      <option value="Cyprus (+357)">
+        Cyprus (+357)
+      </option>
+      <option value="Czechia (+420)">
+        Czechia (+420)
+      </option>
+      <option value="Côte d’Ivoire (+225)">
+        Côte d’Ivoire (+225)
+      </option>
+      <option value="Denmark (+45)">
+        Denmark (+45)
+      </option>
+      <option value="Djibouti (+253)">
+        Djibouti (+253)
+      </option>
+      <option value="Dominica (+1)">
+        Dominica (+1)
+      </option>
+      <option value="Dominican Republic (+1)">
+        Dominican Republic (+1)
+      </option>
+      <option value="Ecuador (+593)">
+        Ecuador (+593)
+      </option>
+      <option value="Egypt (+20)">
+        Egypt (+20)
+      </option>
+      <option value="El Salvador (+503)">
+        El Salvador (+503)
+      </option>
+      <option value="Equatorial Guinea (+240)">
+        Equatorial Guinea (+240)
+      </option>
+      <option value="Eritrea (+291)">
+        Eritrea (+291)
+      </option>
+      <option value="Estonia (+372)">
+        Estonia (+372)
+      </option>
+      <option value="Eswatini (+268)">
+        Eswatini (+268)
+      </option>
+      <option value="Ethiopia (+251)">
+        Ethiopia (+251)
+      </option>
+      <option value="Falkland Islands (+500)">
+        Falkland Islands (+500)
+      </option>
+      <option value="Faroe Islands (+298)">
+        Faroe Islands (+298)
+      </option>
+      <option value="Fiji (+679)">
+        Fiji (+679)
+      </option>
+      <option value="Finland (+358)">
+        Finland (+358)
+      </option>
+      <option value="France (+33)">
+        France (+33)
+      </option>
+      <option value="French Guiana (+594)">
+        French Guiana (+594)
+      </option>
+      <option value="French Polynesia (+689)">
+        French Polynesia (+689)
+      </option>
+      <option value="French Southern Territories (+0)">
+        French Southern Territories (+0)
+      </option>
+      <option value="Gabon (+241)">
+        Gabon (+241)
+      </option>
+      <option value="Gambia (+220)">
+        Gambia (+220)
+      </option>
+      <option value="Georgia (+995)">
+        Georgia (+995)
+      </option>
+      <option value="Germany (+49)">
+        Germany (+49)
+      </option>
+      <option value="Ghana (+233)">
+        Ghana (+233)
+      </option>
+      <option value="Gibraltar (+350)">
+        Gibraltar (+350)
+      </option>
+      <option value="Greece (+30)">
+        Greece (+30)
+      </option>
+      <option value="Greenland (+299)">
+        Greenland (+299)
+      </option>
+      <option value="Grenada (+1)">
+        Grenada (+1)
+      </option>
+      <option value="Guadeloupe (+590)">
+        Guadeloupe (+590)
+      </option>
+      <option value="Guam (+1)">
+        Guam (+1)
+      </option>
+      <option value="Guatemala (+502)">
+        Guatemala (+502)
+      </option>
+      <option value="Guernsey (+44)">
+        Guernsey (+44)
+      </option>
+      <option value="Guinea (+224)">
+        Guinea (+224)
+      </option>
+      <option value="Guinea-Bissau (+245)">
+        Guinea-Bissau (+245)
+      </option>
+      <option value="Guyana (+592)">
+        Guyana (+592)
+      </option>
+      <option value="Haiti (+509)">
+        Haiti (+509)
+      </option>
+      <option value="Heard &amp; McDonald Islands (+0)">
+        Heard &amp; McDonald Islands (+0)
+      </option>
+      <option value="Honduras (+504)">
+        Honduras (+504)
+      </option>
+      <option value="Hong Kong SAR China (+852)">
+        Hong Kong SAR China (+852)
+      </option>
+      <option value="Hungary (+36)">
+        Hungary (+36)
+      </option>
+      <option value="Iceland (+354)">
+        Iceland (+354)
+      </option>
+      <option value="Indonesia (+62)">
+        Indonesia (+62)
+      </option>
+      <option value="Iran (+98)">
+        Iran (+98)
+      </option>
+      <option value="Iraq (+964)">
+        Iraq (+964)
+      </option>
+      <option value="Ireland (+353)">
+        Ireland (+353)
+      </option>
+      <option value="Isle of Man (+44)">
+        Isle of Man (+44)
+      </option>
+      <option value="Israel (+972)">
+        Israel (+972)
+      </option>
+      <option value="Italy (+39)">
+        Italy (+39)
+      </option>
+      <option value="Jamaica (+1)">
+        Jamaica (+1)
+      </option>
+      <option value="Japan (+81)">
+        Japan (+81)
+      </option>
+      <option value="Jersey (+44)">
+        Jersey (+44)
+      </option>
+      <option value="Jordan (+962)">
+        Jordan (+962)
+      </option>
+      <option value="Kazakhstan (+7)">
+        Kazakhstan (+7)
+      </option>
+      <option value="Kenya (+254)">
+        Kenya (+254)
+      </option>
+      <option value="Kiribati (+686)">
+        Kiribati (+686)
+      </option>
+      <option value="Kuwait (+965)">
+        Kuwait (+965)
+      </option>
+      <option value="Kyrgyzstan (+996)">
+        Kyrgyzstan (+996)
+      </option>
+      <option value="Laos (+856)">
+        Laos (+856)
+      </option>
+      <option value="Latvia (+371)">
+        Latvia (+371)
+      </option>
+      <option value="Lebanon (+961)">
+        Lebanon (+961)
+      </option>
+      <option value="Lesotho (+266)">
+        Lesotho (+266)
+      </option>
+      <option value="Liberia (+231)">
+        Liberia (+231)
+      </option>
+      <option value="Libya (+218)">
+        Libya (+218)
+      </option>
+      <option value="Liechtenstein (+423)">
+        Liechtenstein (+423)
+      </option>
+      <option value="Lithuania (+370)">
+        Lithuania (+370)
+      </option>
+      <option value="Luxembourg (+352)">
+        Luxembourg (+352)
+      </option>
+      <option value="Macao SAR China (+853)">
+        Macao SAR China (+853)
+      </option>
+      <option value="Madagascar (+261)">
+        Madagascar (+261)
+      </option>
+      <option value="Malawi (+265)">
+        Malawi (+265)
+      </option>
+      <option value="Malaysia (+60)">
+        Malaysia (+60)
+      </option>
+      <option value="Maldives (+960)">
+        Maldives (+960)
+      </option>
+      <option value="Mali (+223)">
+        Mali (+223)
+      </option>
+      <option value="Malta (+356)">
+        Malta (+356)
+      </option>
+      <option value="Marshall Islands (+692)">
+        Marshall Islands (+692)
+      </option>
+      <option value="Martinique (+596)">
+        Martinique (+596)
+      </option>
+      <option value="Mauritania (+222)">
+        Mauritania (+222)
+      </option>
+      <option value="Mauritius (+230)">
+        Mauritius (+230)
+      </option>
+      <option value="Mayotte (+262)">
+        Mayotte (+262)
+      </option>
+      <option value="Mexico (+52)">
+        Mexico (+52)
+      </option>
+      <option value="Micronesia (+691)">
+        Micronesia (+691)
+      </option>
+      <option value="Moldova (+373)">
+        Moldova (+373)
+      </option>
+      <option value="Monaco (+377)">
+        Monaco (+377)
+      </option>
+      <option value="Mongolia (+976)">
+        Mongolia (+976)
+      </option>
+      <option value="Montenegro (+382)">
+        Montenegro (+382)
+      </option>
+      <option value="Montserrat (+1)">
+        Montserrat (+1)
+      </option>
+      <option value="Morocco (+212)">
+        Morocco (+212)
+      </option>
+      <option value="Mozambique (+258)">
+        Mozambique (+258)
+      </option>
+      <option value="Myanmar (Burma) (+95)">
+        Myanmar (Burma) (+95)
+      </option>
+      <option value="Namibia (+264)">
+        Namibia (+264)
+      </option>
+      <option value="Nauru (+674)">
+        Nauru (+674)
+      </option>
+      <option value="Nepal (+977)">
+        Nepal (+977)
+      </option>
+      <option value="Netherlands (+31)">
+        Netherlands (+31)
+      </option>
+      <option value="New Caledonia (+687)">
+        New Caledonia (+687)
+      </option>
+      <option value="New Zealand (+64)">
+        New Zealand (+64)
+      </option>
+      <option value="Nicaragua (+505)">
+        Nicaragua (+505)
+      </option>
+      <option value="Niger (+227)">
+        Niger (+227)
+      </option>
+      <option value="Nigeria (+234)">
+        Nigeria (+234)
+      </option>
+      <option value="Niue (+683)">
+        Niue (+683)
+      </option>
+      <option value="Norfolk Island (+672)">
+        Norfolk Island (+672)
+      </option>
+      <option value="North Korea (+850)">
+        North Korea (+850)
+      </option>
+      <option value="North Macedonia (+389)">
+        North Macedonia (+389)
+      </option>
+      <option value="Northern Mariana Islands (+1)">
+        Northern Mariana Islands (+1)
+      </option>
+      <option value="Norway (+47)">
+        Norway (+47)
+      </option>
+      <option value="Oman (+968)">
+        Oman (+968)
+      </option>
+      <option value="Pakistan (+92)">
+        Pakistan (+92)
+      </option>
+      <option value="Palau (+680)">
+        Palau (+680)
+      </option>
+      <option value="Palestinian Territories (+970)">
+        Palestinian Territories (+970)
+      </option>
+      <option value="Panama (+507)">
+        Panama (+507)
+      </option>
+      <option value="Papua New Guinea (+675)">
+        Papua New Guinea (+675)
+      </option>
+      <option value="Paraguay (+595)">
+        Paraguay (+595)
+      </option>
+      <option value="Peru (+51)">
+        Peru (+51)
+      </option>
+      <option value="Philippines (+63)">
+        Philippines (+63)
+      </option>
+      <option value="Pitcairn Islands (+0)">
+        Pitcairn Islands (+0)
+      </option>
+      <option value="Poland (+48)">
+        Poland (+48)
+      </option>
+      <option value="Portugal (+351)">
+        Portugal (+351)
+      </option>
+      <option value="Puerto Rico (+1)">
+        Puerto Rico (+1)
+      </option>
+      <option value="Qatar (+974)">
+        Qatar (+974)
+      </option>
+      <option value="Romania (+40)">
+        Romania (+40)
+      </option>
+      <option value="Russia (+7)">
+        Russia (+7)
+      </option>
+      <option value="Rwanda (+250)">
+        Rwanda (+250)
+      </option>
+      <option value="Réunion (+262)">
+        Réunion (+262)
+      </option>
+      <option value="Samoa (+685)">
+        Samoa (+685)
+      </option>
+      <option value="San Marino (+378)">
+        San Marino (+378)
+      </option>
+      <option value="Saudi Arabia (+966)">
+        Saudi Arabia (+966)
+      </option>
+      <option value="Senegal (+221)">
+        Senegal (+221)
+      </option>
+      <option value="Serbia (+381)">
+        Serbia (+381)
+      </option>
+      <option value="Seychelles (+248)">
+        Seychelles (+248)
+      </option>
+      <option value="Sierra Leone (+232)">
+        Sierra Leone (+232)
+      </option>
+      <option value="Singapore (+65)">
+        Singapore (+65)
+      </option>
+      <option value="Sint Maarten (+1)">
+        Sint Maarten (+1)
+      </option>
+      <option value="Slovakia (+421)">
+        Slovakia (+421)
+      </option>
+      <option value="Slovenia (+386)">
+        Slovenia (+386)
+      </option>
+      <option value="Solomon Islands (+677)">
+        Solomon Islands (+677)
+      </option>
+      <option value="Somalia (+252)">
+        Somalia (+252)
+      </option>
+      <option value="South Africa (+27)">
+        South Africa (+27)
+      </option>
+      <option value="South Georgia &amp; South Sandwich Islands (+0)">
+        South Georgia &amp; South Sandwich Islands (+0)
+      </option>
+      <option value="South Korea (+82)">
+        South Korea (+82)
+      </option>
+      <option value="South Sudan (+211)">
+        South Sudan (+211)
+      </option>
+      <option value="Spain (+34)">
+        Spain (+34)
+      </option>
+      <option value="Sri Lanka (+94)">
+        Sri Lanka (+94)
+      </option>
+      <option value="St. Barthélemy (+590)">
+        St. Barthélemy (+590)
+      </option>
+      <option value="St. Helena (+290)">
+        St. Helena (+290)
+      </option>
+      <option value="St. Kitts &amp; Nevis (+1)">
+        St. Kitts &amp; Nevis (+1)
+      </option>
+      <option value="St. Lucia (+1)">
+        St. Lucia (+1)
+      </option>
+      <option value="St. Martin (+590)">
+        St. Martin (+590)
+      </option>
+      <option value="St. Pierre &amp; Miquelon (+508)">
+        St. Pierre &amp; Miquelon (+508)
+      </option>
+      <option value="St. Vincent &amp; Grenadines (+1)">
+        St. Vincent &amp; Grenadines (+1)
+      </option>
+      <option value="Sudan (+249)">
+        Sudan (+249)
+      </option>
+      <option value="Suriname (+597)">
+        Suriname (+597)
+      </option>
+      <option value="Svalbard &amp; Jan Mayen (+47)">
+        Svalbard &amp; Jan Mayen (+47)
+      </option>
+      <option value="Sweden (+46)">
+        Sweden (+46)
+      </option>
+      <option value="Switzerland (+41)">
+        Switzerland (+41)
+      </option>
+      <option value="Syria (+963)">
+        Syria (+963)
+      </option>
+      <option value="São Tomé &amp; Príncipe (+239)">
+        São Tomé &amp; Príncipe (+239)
+      </option>
+      <option value="Taiwan (+886)">
+        Taiwan (+886)
+      </option>
+      <option value="Tajikistan (+992)">
+        Tajikistan (+992)
+      </option>
+      <option value="Tanzania (+255)">
+        Tanzania (+255)
+      </option>
+      <option value="Thailand (+66)">
+        Thailand (+66)
+      </option>
+      <option value="Timor-Leste (+670)">
+        Timor-Leste (+670)
+      </option>
+      <option value="Togo (+228)">
+        Togo (+228)
+      </option>
+      <option value="Tokelau (+690)">
+        Tokelau (+690)
+      </option>
+      <option value="Tonga (+676)">
+        Tonga (+676)
+      </option>
+      <option value="Trinidad &amp; Tobago (+1)">
+        Trinidad &amp; Tobago (+1)
+      </option>
+      <option value="Tunisia (+216)">
+        Tunisia (+216)
+      </option>
+      <option value="Turkey (+90)">
+        Turkey (+90)
+      </option>
+      <option value="Turkmenistan (+993)">
+        Turkmenistan (+993)
+      </option>
+      <option value="Turks &amp; Caicos Islands (+1)">
+        Turks &amp; Caicos Islands (+1)
+      </option>
+      <option value="Tuvalu (+688)">
+        Tuvalu (+688)
+      </option>
+      <option value="U.S. Outlying Islands (+0)">
+        U.S. Outlying Islands (+0)
+      </option>
+      <option value="U.S. Virgin Islands (+1)">
+        U.S. Virgin Islands (+1)
+      </option>
+      <option value="Uganda (+256)">
+        Uganda (+256)
+      </option>
+      <option value="Ukraine (+380)">
+        Ukraine (+380)
+      </option>
+      <option value="United Arab Emirates (+971)">
+        United Arab Emirates (+971)
+      </option>
+      <option value="United Kingdom (+44)">
+        United Kingdom (+44)
+      </option>
+      <option value="United States (+1)">
+        United States (+1)
+      </option>
+      <option value="Uruguay (+598)">
+        Uruguay (+598)
+      </option>
+      <option value="Uzbekistan (+998)">
+        Uzbekistan (+998)
+      </option>
+      <option value="Vanuatu (+678)">
+        Vanuatu (+678)
+      </option>
+      <option value="Vatican City (+39)">
+        Vatican City (+39)
+      </option>
+      <option value="Venezuela (+58)">
+        Venezuela (+58)
+      </option>
+      <option value="Vietnam (+84)">
+        Vietnam (+84)
+      </option>
+      <option value="Wallis &amp; Futuna (+681)">
+        Wallis &amp; Futuna (+681)
+      </option>
+      <option value="Western Sahara (+212)">
+        Western Sahara (+212)
+      </option>
+      <option value="Yemen (+967)">
+        Yemen (+967)
+      </option>
+      <option value="Zambia (+260)">
+        Zambia (+260)
+      </option>
+      <option value="Åland Islands (+358)">
+        Åland Islands (+358)
+      </option>
+      <option value="Zimbabwe (+263)">
+        Zimbabwe (+263)
+      </option>
+  </select>
+
+<!----></div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1278" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1279" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-nationalNumber" class="artdeco-text-input--label">Mobile phone number</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-nationalNumber" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-nationalNumber-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110548-phoneNumber-nationalNumber-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+    </div>
+  
+
+<!---->
+<!---->        </div>
+
+        
+    <footer role="presentation">
+<!---->
+      <div class="jobs-easy-apply-footer__info">
+          <p class="t-12 t-black--light">
+            Submitting this application won’t change your LinkedIn profile.
+          </p>
+                  <p class="t-12 t-black--light mt1">
+              Application powered by LinkedIn. <a href="/help/linkedin/answer/71792?lang=en_US" target="_blank" rel="noopener noreferrer" class="link-without-visited-state" data-control-name="help_center_unify" aria-label="Visit help center to know more" data-test-easy-apply-footer-ats-help="true">Help Center</a>
+          </p>
+      </div>
+      <div class="display-flex justify-flex-end ph5 pv4">
+<!---->
+          <button aria-label="Continue to next step" id="ember1280" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view" data-easy-apply-next-button="" data-live-test-easy-apply-next-button="" type="button"><!---->
+<span class="artdeco-button__text">
+    Next
+</span></button>
+              </div>
+    </footer>
+  
+    </form>
+
+Just click next.
+
+After that it will bring us to the next form page, with more questions. We will continue it, untill we see some complsory question fields which didn't auto fill and kept blank. that indicated that human intervention is needed in that case. We will mark them as in-process. 
+
+Example:
+<form>
+        <div class="ph5">
+            
+    <div class="bwVkIEuDMPLKKkRhnCFlBhavUakdRBmnSIXNI">
+        <h3 class="t-16 t-bold">
+          Additional Questions
+        </h3>
+<!----><!----><!----><!----><!----><!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt1" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1287" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1288" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110772-numeric" class="artdeco-text-input--label">How many years of work experience do you have with Python (Programming Language)?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110772-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110772-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110772-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1289" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1290" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110764-numeric" class="artdeco-text-input--label">How many years of work experience do you have with PyTorch?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110764-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110764-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110764-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1291" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1292" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110756-numeric" class="artdeco-text-input--label">How many years of work experience do you have with Docker Products?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110756-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110756-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110756-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1293" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1294" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110748-numeric" class="artdeco-text-input--label">How many years of experience do you have in ML/NLP experience with focused on LLMs/foundation models?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110748-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110748-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110748-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1295" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1296" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110740-numeric" class="artdeco-text-input--label">How many years of experience in fine-tuned open-source LLMs (e.g., LLaMA, Mistral, Falcon) for production use?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110740-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110740-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110740-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1297" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1298" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110812-numeric" class="artdeco-text-input--label">How many years of hands-on experience in building or training Small Language Models (SLMs)?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110812-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110812-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110812-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1299" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1300" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110804-numeric" class="artdeco-text-input--label">How many years of experience in LoRA / QLoRA / adapters / distillation implementation in real projects?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110804-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110804-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110804-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1301" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1302" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110780-numeric" class="artdeco-text-input--label">How many years of experience in production experience with RAG systems and vector databases?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110780-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110780-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110780-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1303" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1304" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110796-numeric" class="artdeco-text-input--label">How many years of deployment experience in LLM/SLM models using Docker/Kubernetes in secure or regulated environments?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110796-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110796-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110796-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1305" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1306" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110788-numeric" class="artdeco-text-input--label">What is your Current CTC?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110788-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110788-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110788-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1307" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1308" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110828-numeric" class="artdeco-text-input--label">What is your Expected CTC?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110828-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110828-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110828-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+<!----><!---->        <div class="lJqCaVrfRKizFaYlTAughsFwyBNLlptiz
+            ">
+            
+          <div class="fb-dash-form-element wcQcloMZFyqcrrLCKPiqPFaYbzdZFutxWqo mt4" style="width:100%" tabindex="-1" data-test-form-element="">
+<!---->        <div data-test-single-line-text-form-component="" data-live-test-single-line-text-form-component="">
+  <div id="ember1309" class="artdeco-text-input artdeco-text-input--type-text artdeco-text-input--color-default artdeco-text-input--state-required ember-view">  <div id="ember1310" class="artdeco-text-input--container ember-view">  <label for="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110820-numeric" class="artdeco-text-input--label">What is your Notice period?</label>
+  <input inputmode="text" class=" artdeco-text-input--input" id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110820-numeric" required="" aria-describedby="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110820-numeric-error" dir="auto" type="text">
+</div>
+<!----><!----></div>
+
+  <div id="single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4366593089-25751110820-numeric-error">
+<!----></div>
+</div>
+<!---->  </div>
+
+  
+        </div>
+    </div>
+  
+
+<!---->
+<!---->        </div>
+
+        
+    <footer role="presentation">
+<!---->
+      <div class="jobs-easy-apply-footer__info">
+          <p class="t-12 t-black--light">
+            Submitting this application won’t change your LinkedIn profile.
+          </p>
+                  <p class="t-12 t-black--light mt1">
+              Application powered by LinkedIn. <a href="/help/linkedin/answer/71792?lang=en_US" target="_blank" rel="noopener noreferrer" class="link-without-visited-state" data-control-name="help_center_unify" aria-label="Visit help center to know more" data-test-easy-apply-footer-ats-help="true">Help Center</a>
+          </p>
+      </div>
+      <div class="display-flex justify-flex-end ph5 pv4">
+          <button aria-label="Back to previous step" id="ember1286" class="mr2 artdeco-button artdeco-button--2 artdeco-button--tertiary ember-view" type="button"><!---->
+<span class="artdeco-button__text">
+    Back
+</span></button>
+
+          <button aria-label="Review your application" id="ember1311" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view" data-live-test-easy-apply-review-button="" type="button"><!---->
+<span class="artdeco-button__text">
+    Review
+</span></button>
+      </div>
+    </footer>
+  
+    </form>
+
+In those cases after marking it as "in-process", we will hit the dismiss button that will atempt to close the form.
+<button aria-label="Dismiss" id="ember1267" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view artdeco-modal__dismiss" data-test-modal-close-btn="">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="close-medium">
+<!---->    
+    <use href="#close-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+
+
+Immediately after that linkedin shows a dialogue box asking whether to discard or save it. We will choose to save:
+
+
+<div data-test-modal="" role="alertdialog" tabindex="-1" aria-describedby="dialog-desc-st23" class="artdeco-modal artdeco-modal--layer-confirmation " size="small" aria-labelledby="dialog-label-st23">
+        <span class="a11y-text">Dialog content start.</span>
+<!---->        
+  <div id="ember1332" class="artdeco-modal__header ember-view">
+    <h2 data-test-dialog-title="" id="dialog-label-st23">Save this application?</h2>
+  
+    <button aria-label="Dismiss" id="ember1333" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view artdeco-modal__dismiss" data-test-modal-close-btn="">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="close-medium">
+<!---->    
+    <use href="#close-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+</div>
+  <div id="ember1334" class="artdeco-modal__content ember-view">
+    <p data-test-dialog-content="" id="dialog-desc-st23">Save to return to this application later. Any uploaded files will not be saved.<br><br>If you choose to not save, your application will be discarded.</p>
+  </div>
+  <div id="ember1335" class="artdeco-modal__actionbar artdeco-modal__actionbar--confirm-dialog artdeco-modal__actionbar ember-view">
+    <button id="ember1336" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view artdeco-modal__confirm-dialog-btn" data-control-name="discard_application_confirm_btn" data-test-dialog-secondary-btn=""><!---->
+<span class="artdeco-button__text">
+    Discard
+</span></button>
+    <button id="ember1337" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view artdeco-modal__confirm-dialog-btn" data-control-name="save_application_btn" data-test-dialog-primary-btn=""><!---->
+<span class="artdeco-button__text">
+    Save
+</span></button>
+  </div>
+
+        <span class="a11y-text">Dialog content end.</span>
+      </div>
+
+It will basically save the progress.
+
+19. If no blockers are faced, keep clicking next button, then finally there will be a button called "Review" 
+<button aria-label="Review your application" id="ember1622" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view" data-live-test-easy-apply-review-button="" type="button"><!---->
+<span class="artdeco-button__text">
+    Review
+</span></button>
+
+After clicking it, it will summarise the application, we will click "Submit Application"
+<button aria-label="Submit application" id="ember1632" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view" data-live-test-easy-apply-submit-button="" type="button"><!---->
+<span class="artdeco-button__text">
+    Submit application
+</span></button>
+
+Mark it as applied. 
+
+Then this dialogue box comes:
+<div data-test-modal="" role="dialog" tabindex="-1" class="artdeco-modal artdeco-modal--layer-default " size="medium" aria-labelledby="post-apply-modal">
+        <span class="a11y-text">Dialog content start.</span>
+            <button aria-label="Dismiss" id="ember1762" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view artdeco-modal__dismiss" data-test-modal-close-btn="">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="close-medium">
+<!---->    
+    <use href="#close-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+        
+    <div id="ember1777" class="artdeco-modal__header ember-view">
+  <h2 id="post-apply-modal">
+    Application sent
+  </h2>
+
+<!----></div>
+
+<div id="ember1778" class="artdeco-modal__content ember-view pv6">
+  
+
+  <span class="jpac-modal-header-icon">
+    <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" data-supported-dps="64x64" data-test-icon="signal-success">
+<!---->  <svg display="var(--hue-web-svg-display-dark)">
+    <image href="https://static.licdn.com/aero-v1/sc/h/8uv7nlh1wh8x23p16inejnp8d" x="0" y="0" width="64" height="64"></image>
+  </svg>
+
+  <svg display="var(--hue-web-svg-display-light)">
+    <image href="https://static.licdn.com/aero-v1/sc/h/2y2u2mhlct0k9eme9b15wkljx" x="0" y="0" width="64" height="64"></image>
+  </svg>
+</svg>
+  </span>
+  <h3 class="jpac-modal-header t-20 t-bold">
+    Your application was sent to Amicon Hub Services!
+  </h3>
+
+
+  <p class="t-14 t-black--light text-align-center mb3">You can keep track of your application in the "Applied" tab of My Jobs</p>
+</div>
+
+<div id="ember1779" class="artdeco-modal__actionbar ember-view">
+  <button id="ember1780" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view mlA block"><!---->
+<span class="artdeco-button__text">
+    Done
+</span></button>
+</div>
+
+        <span class="a11y-text">Dialog content end.</span>
+      </div>
+
+Click Done
+
+20. We move on to the next job on the left side
+
+21. When all jobs in the page are covered, we move to the next page by clicking the button:
+
+<button class="jobs-search-pagination__indicator-button " aria-label="Page 2" type="button">
+                <span>2</span>
+              </button>
+
+23. Most important part: We maintain a detailed excel or csv file will all the application details, , name of company, easy apply or apply or saved, experience required, HR details available (yes or no), if yes, name of recruiter, linkedin id, connection request status. 
+
+24. In the Extension UI there should be recruiter search button. Where, if a recruiter accepts a connection request. I can put the name. It will show me the details like which company the HR is associated to, date of request sent and other relevant details. After that, there will be a button to automatically generate a linkedin message for the recruiter based on her profile. If the job description associated to her asked for a eligible experience and I have already applied, mention about that particular job (use the jd text) in the linkedin message. If the experience range was out of bound, just write a generic message asking thanking for accepting the connection request and asking for available opportunities. 
+
+Track this in the excel sheet too.
+
+
+For now tell me whether you understood the entire job or not. Don't di any coding for now. Ask any questions if you have. 

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GetEmployed</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>GetEmployed</h1>
+        <p class="subtitle">LinkedIn automation agent</p>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <button id="toggle-agent" class="primary">Start Agent</button>
+          <span id="agent-status" class="status">Stopped</span>
+        </div>
+
+        <label class="row">
+          <span>Premium member</span>
+          <input id="premium-toggle" type="checkbox" />
+        </label>
+
+        <label class="row">
+          <span>Model</span>
+          <select id="model-select">
+            <option value="">Loading models...</option>
+          </select>
+        </label>
+
+        <label class="row">
+          <span>Max eligible years</span>
+          <input id="eligibility-max" type="number" min="0" step="1" />
+        </label>
+
+        <label class="row">
+          <span>Max jobs per run</span>
+          <input id="max-jobs" type="number" min="1" step="1" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <button id="export-csv" class="secondary">Export CSV</button>
+        <button id="clear-data" class="secondary">Clear All Data</button>
+        <p id="export-status" class="status"></p>
+        <p id="clear-status" class="status"></p>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <span>Test extraction</span>
+          <button id="test-extract" class="secondary">Run</button>
+        </div>
+        <textarea
+          id="jd-input"
+          rows="6"
+          placeholder="Paste a job description to test the Ollama extraction..."
+        ></textarea>
+        <p id="test-output" class="status"></p>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
