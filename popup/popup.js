@@ -19,6 +19,9 @@ const clearStatus = document.getElementById("clear-status");
 const testButton = document.getElementById("test-extract");
 const jdInput = document.getElementById("jd-input");
 const testOutput = document.getElementById("test-output");
+const recruiterSearchInput = document.getElementById("recruiter-search");
+const recruiterSearchBtn = document.getElementById("recruiter-search-btn");
+const recruiterResults = document.getElementById("recruiter-results");
 
 function updateUI(state) {
   toggleButton.textContent = state.isAgentRunning
@@ -88,21 +91,33 @@ function exportCsv() {
       "applyType",
       "status",
       "experienceRequired",
+      "hrAvailable",
       "recruiterName",
-      "recruiterProfile",
+      "recruiterLinkedIn",
+      "recruiterRole",
+      "connectionDegree",
       "connectionStatus",
+      "messageGenerated",
+      "messageTimestamp",
     ];
 
     const rows = records.map((record) => [
-      record.timestamp || "",
+      record.timestamp ? new Date(record.timestamp).toISOString() : "",
       record.company || "",
       record.jobTitle || "",
       record.applyType || "",
       record.status || "",
-      record.experienceRequired || "",
+      record.experienceRequired ?? "",
+      record.hrDetails?.available ? "Yes" : "No",
       record.hrDetails?.name || "",
       record.hrDetails?.linkedinId || "",
+      record.hrDetails?.role || "",
+      record.hrDetails?.connectionDegree || "",
       record.hrDetails?.connectionStatus || "",
+      record.messageGenerated ? "Yes" : "No",
+      record.messageTimestamp
+        ? new Date(record.messageTimestamp).toISOString()
+        : "",
     ]);
 
     const csv = [headers, ...rows]
@@ -248,3 +263,270 @@ testButton.addEventListener("click", () => {
 
 loadState();
 populateModels();
+
+/* ── Recruiter Search & Message Generator ───────────────────────── */
+
+function searchRecruiters(query) {
+  const q = query.trim().toLowerCase();
+  console.log("[Recruiter Search] query:", q);
+  if (!q) {
+    recruiterResults.classList.add("hidden");
+    return;
+  }
+
+  chrome.storage.local.get({ applicationRecords: [] }, (data) => {
+    const records = data.applicationRecords || [];
+    console.log("[Recruiter Search] Total records:", records.length);
+    console.log(
+      "[Recruiter Search] Records with hrDetails:",
+      records.filter((r) => r.hrDetails?.available && r.hrDetails?.name).length,
+    );
+
+    // Find all records where recruiter name matches the query
+    const matches = records.filter((r) => {
+      if (!r.hrDetails?.available || !r.hrDetails?.name) return false;
+      return r.hrDetails.name.toLowerCase().includes(q);
+    });
+
+    console.log("[Recruiter Search] Matches found:", matches.length);
+    if (matches.length > 0) {
+      console.log(
+        "[Recruiter Search] First match:",
+        matches[0].hrDetails?.name,
+        matches[0].company,
+        matches[0].status,
+      );
+    }
+    renderRecruiterResults(matches);
+  });
+}
+
+function badgeClass(status) {
+  const s = (status || "").toLowerCase();
+  if (s === "applied") return "badge--applied";
+  if (s.includes("save")) return "badge--saved";
+  if (s.includes("inprocess") || s.includes("in process"))
+    return "badge--inprocess";
+  return "badge--other";
+}
+
+function renderRecruiterResults(matches) {
+  recruiterResults.innerHTML = "";
+
+  if (!matches.length) {
+    recruiterResults.innerHTML =
+      '<p class="no-results">No matching recruiters found in your records.</p>';
+    recruiterResults.classList.remove("hidden");
+    return;
+  }
+
+  // Group by recruiter name + linkedinId for dedup display
+  const grouped = {};
+  for (const rec of matches) {
+    const key = rec.hrDetails.linkedinId || rec.hrDetails.name;
+    if (!grouped[key]) {
+      grouped[key] = {
+        name: rec.hrDetails.name,
+        linkedinId: rec.hrDetails.linkedinId,
+        linkedinUrl: rec.hrDetails.linkedinUrl,
+        role: rec.hrDetails.role,
+        connectionDegree: rec.hrDetails.connectionDegree,
+        connectionStatus: rec.hrDetails.connectionStatus,
+        jobs: [],
+      };
+    }
+    grouped[key].jobs.push({
+      company: rec.company,
+      jobTitle: rec.jobTitle,
+      status: rec.status,
+      applyType: rec.applyType,
+      experienceRequired: rec.experienceRequired,
+      jobDescription: rec.jobDescription || "",
+      timestamp: rec.timestamp,
+      messageGenerated: rec.messageGenerated || false,
+      generatedMessage: rec.generatedMessage || "",
+    });
+  }
+
+  for (const [key, recruiter] of Object.entries(grouped)) {
+    const card = document.createElement("div");
+    card.className = "recruiter-card";
+
+    // Sort jobs by timestamp (newest first)
+    recruiter.jobs.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+    const jobRows = recruiter.jobs
+      .map((j) => {
+        const date = j.timestamp
+          ? new Date(j.timestamp).toLocaleDateString()
+          : "—";
+        const badge = `<span class="recruiter-card__badge ${badgeClass(j.status)}">${j.status}</span>`;
+        return `<span>${j.jobTitle} @ ${j.company} · ${j.applyType} · Exp: ${j.experienceRequired ?? "?"}yr · ${date} ${badge}</span>`;
+      })
+      .join("");
+
+    const connStatus = recruiter.connectionStatus
+      ? `Connection: ${recruiter.connectionStatus}`
+      : "Connection: —";
+
+    card.innerHTML = `
+      <div class="recruiter-card__name">${escHtml(recruiter.name)}</div>
+      <div class="recruiter-card__meta">
+        <span>${escHtml(recruiter.role || "—")}</span>
+        <span>${escHtml(recruiter.connectionDegree || "?")} degree · ${connStatus}</span>
+        ${jobRows}
+      </div>
+      <div class="recruiter-card__actions">
+        <button class="btn-generate" data-recruiter-key="${escAttr(key)}">Generate Message</button>
+        ${recruiter.linkedinUrl ? `<button class="btn-open-profile" data-url="${escAttr(recruiter.linkedinUrl)}">Open Profile</button>` : ""}
+      </div>
+      <div class="recruiter-card__message hidden" data-msg-key="${escAttr(key)}"></div>
+      <div class="recruiter-card__status" data-status-key="${escAttr(key)}"></div>
+    `;
+
+    // Show previously generated message if any
+    const lastJob = recruiter.jobs.find((j) => j.generatedMessage);
+    if (lastJob?.generatedMessage) {
+      const msgDiv = card.querySelector(`[data-msg-key]`);
+      msgDiv.textContent = lastJob.generatedMessage;
+      msgDiv.classList.remove("hidden");
+      // Add copy button
+      const actionsDiv = card.querySelector(".recruiter-card__actions");
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "btn-copy";
+      copyBtn.textContent = "Copy Message";
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(lastJob.generatedMessage);
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy Message"), 2000);
+      });
+      actionsDiv.appendChild(copyBtn);
+    }
+
+    // Generate message button
+    card.querySelector(".btn-generate").addEventListener("click", async (e) => {
+      const btn = e.currentTarget;
+      btn.disabled = true;
+      btn.textContent = "Generating...";
+
+      const statusDiv = card.querySelector(`[data-status-key]`);
+      const msgDiv = card.querySelector(`[data-msg-key]`);
+      statusDiv.textContent = "Calling Ollama...";
+
+      // Pick the most relevant job for the message
+      // Prefer: Applied > InProcess > Saved
+      const sortedJobs = [...recruiter.jobs].sort((a, b) => {
+        const priority = { Applied: 3, InProcess: 2, Saved: 1 };
+        const pa = priority[a.status] || 0;
+        const pb = priority[b.status] || 0;
+        return pb - pa;
+      });
+      const bestJob = sortedJobs[0];
+
+      // Determine message type: eligible/applied => specific, else generic
+      const state = await new Promise((resolve) =>
+        chrome.storage.local.get(DEFAULT_STATE, resolve),
+      );
+      const maxYears = state.eligibilityMaxYears || 0;
+      const wasEligible =
+        maxYears === 0 || (bestJob.experienceRequired || 0) <= maxYears;
+      const wasApplied =
+        bestJob.status === "Applied" || bestJob.status === "InProcess";
+
+      console.log("[Recruiter Msg] Sending GENERATE_RECRUITER_MESSAGE:", {
+        recruiterName: recruiter.name,
+        jobTitle: bestJob.jobTitle,
+        company: bestJob.company,
+        applicationStatus: bestJob.status,
+        wasEligibleAndApplied: wasEligible && wasApplied,
+        experienceRequired: bestJob.experienceRequired,
+      });
+
+      chrome.runtime.sendMessage(
+        {
+          action: "GENERATE_RECRUITER_MESSAGE",
+          recruiterName: recruiter.name,
+          jobTitle: bestJob.jobTitle,
+          company: bestJob.company,
+          jobDescription: bestJob.jobDescription,
+          applicationStatus: bestJob.status,
+          wasEligibleAndApplied: wasEligible && wasApplied,
+          experienceRequired: bestJob.experienceRequired,
+        },
+        (response) => {
+          console.log("[Recruiter Msg] Response:", response);
+          btn.disabled = false;
+          btn.textContent = "Generate Message";
+
+          if (!response?.ok) {
+            console.error("[Recruiter Msg] Error:", response?.error);
+            statusDiv.textContent = `Error: ${response?.error || "Failed"}`;
+            return;
+          }
+
+          const msg = response.message;
+          msgDiv.textContent = msg;
+          msgDiv.classList.remove("hidden");
+          statusDiv.textContent =
+            "Message generated! Copy and send on LinkedIn.";
+
+          // Add/update copy button
+          let copyBtn = card.querySelector(".btn-copy");
+          if (!copyBtn) {
+            copyBtn = document.createElement("button");
+            copyBtn.className = "btn-copy";
+            card.querySelector(".recruiter-card__actions").appendChild(copyBtn);
+          }
+          copyBtn.textContent = "Copy Message";
+          copyBtn.onclick = () => {
+            navigator.clipboard.writeText(msg);
+            copyBtn.textContent = "Copied!";
+            setTimeout(() => (copyBtn.textContent = "Copy Message"), 2000);
+          };
+
+          // Save generated message to records
+          chrome.runtime.sendMessage({
+            action: "UPDATE_RECORD_MESSAGE",
+            linkedinId: recruiter.linkedinId,
+            generatedMessage: msg,
+          });
+        },
+      );
+    });
+
+    // Open profile button
+    const openBtn = card.querySelector(".btn-open-profile");
+    if (openBtn) {
+      openBtn.addEventListener("click", () => {
+        chrome.tabs.create({ url: openBtn.dataset.url, active: true });
+      });
+    }
+
+    recruiterResults.appendChild(card);
+  }
+
+  recruiterResults.classList.remove("hidden");
+}
+
+function escHtml(str) {
+  const d = document.createElement("div");
+  d.textContent = str || "";
+  return d.innerHTML;
+}
+
+function escAttr(str) {
+  return (str || "").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+// Event listeners
+console.log("[Recruiter Search] Event listeners attached");
+recruiterSearchBtn.addEventListener("click", () => {
+  console.log("[Recruiter Search] Search button clicked");
+  searchRecruiters(recruiterSearchInput.value);
+});
+
+recruiterSearchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchRecruiters(recruiterSearchInput.value);
+  }
+});
